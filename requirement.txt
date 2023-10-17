@@ -1,0 +1,5 @@
+qiskit
+ipykernel
+matplotlib
+pylatexenc
+qiskit-aer
