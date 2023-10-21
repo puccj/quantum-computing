@@ -3,3 +3,6 @@ ipykernel
 matplotlib
 pylatexenc
 qiskit-aer
+qiskit-ibm-provider
+ipywidgets
+qiskit-ibm-runtime
