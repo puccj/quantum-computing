@@ -6,3 +6,7 @@ qiskit-aer
 qiskit-ibm-provider
 ipywidgets
 qiskit-ibm-runtime
+
+qutip
+pulser
+networkx
