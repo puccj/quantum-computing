@@ -1,0 +1,7 @@
+ipykernel
+networkx
+numpy
+qiskit
+qiskit-algorithms
+matplotlib
+pylatexenc
