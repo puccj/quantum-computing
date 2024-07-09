@@ -16,7 +16,7 @@ class MaxCutSolver:
         self.p = p
         self.n = len(graph)
         self.qc = None
-        self.operator = self.__get_operator__()
+        self.operator = self.__get_operator()
 
     def set_p(self, p):
         self.p = p
@@ -54,7 +54,7 @@ class MaxCutSolver:
     def get_adjacency_matrix(self):
         return nx.adjacency_matrix(self.graph).toarray()
     
-    def __get_operator__(self):
+    def __get_operator(self):
         pauli_list = []     # will store the Pauli operators
         coeffs = []         # and their corresponing coefficients
         shift=0
@@ -89,7 +89,7 @@ class MaxCutSolver:
             cost += (configuration[edge[0]]*configuration[edge[1]])
         return cost
     
-    def __sample_most_likely__(self, state_vector):
+    def __sample_most_likely(self, state_vector):
         """Compute the most likely bitstring to come out in a measurement from state vector."""
         values = state_vector
         num_qubits = int(np.log2(len(values)))
@@ -106,7 +106,7 @@ class MaxCutSolver:
     def classical_solution(self):
         npme = NumPyMinimumEigensolver()
         result = npme.compute_minimum_eigenvalue(Operator(self.operator))
-        return self.__sample_most_likely__(result.eigenstate.data)
+        return self.__sample_most_likely(result.eigenstate.data)
     
     def create_qaoa_circuit(self, p = None):
         """Create the parametrized quantum circuit for the QAOA algorithm."""
